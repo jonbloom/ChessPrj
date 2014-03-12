@@ -5,20 +5,18 @@ public class ChessModel implements IChessModel {
 	private IChessPiece[][] board;
 	private Player player;
 	private final static int BDSIZE = 8;
-	private Pawn pawn;
 	
 	public ChessModel() {
-		// Set up specific pieces, to start board. FUCK IT ALLLLLL!
+		// Set up specific pieces, to start board.
+		
 		//Pawns
-		board[0][1] = pawn;
-		board[1][1] = pawn;
-		board[2][1] = pawn;
-		board[3][1] = pawn;
-		board[4][1] = pawn;
-		board[5][1] = pawn;
-		board[6][1] = pawn;
-		board[7][1] = pawn;
-		board[8]
+		for (int i = 0; i < 8; i++) {
+			//TO DO: Check that players is correct.
+			board[i][1] = new Pawn(Player.BLACK);
+			board[i][6] = new Pawn(player);
+		}
+		
+		
 	}
 	
 	public boolean isComplete() {
