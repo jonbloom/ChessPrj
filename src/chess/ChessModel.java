@@ -13,10 +13,34 @@ public class ChessModel implements IChessModel {
 		for (int i = 0; i < 8; i++) {
 			//TO DO: Check that players is correct.
 			board[i][1] = new Pawn(Player.BLACK);
-			board[i][6] = new Pawn(player);
+			board[i][6] = new Pawn(Player.WHITE);
 		}
 		
+		//Rook
+		board[0][0] = new Rook(Player.BLACK);
+		board[0][7] = new Rook(Player.BLACK);
+		board[7][0] = new Rook(Player.WHITE);
+		board[7][7] = new Rook(Player.WHITE);
 		
+		//Knight
+		board[0][1] = new Knight(Player.BLACK);
+		board[0][6] = new Knight(Player.BLACK);
+		board[7][1] = new Knight(Player.WHITE);
+		board[7][6] = new Knight(Player.WHITE);
+		
+		//Bishop
+		board[0][2] = new Bishop(Player.BLACK);
+		board[0][5] = new Bishop(Player.BLACK);
+		board[7][2] = new Bishop(Player.WHITE);
+		board[7][5] = new Bishop(Player.WHITE);
+		
+		//Queen
+		board[0][3] = new Queen(Player.BLACK);
+		board[7][4] = new Queen(Player.WHITE);
+		
+		//King 
+		board[0][4] = new King(Player.BLACK);
+		board[7][3] = new King(Player.WHITE);
 	}
 	
 	public boolean isComplete() {
