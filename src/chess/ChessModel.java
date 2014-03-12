@@ -8,7 +8,7 @@ public class ChessModel implements IChessModel {
 	private Pawn pawn;
 	
 	public ChessModel() {
-		// Set up specific pieces, to start board.
+		// Set up specific pieces, to start board. FUCK IT ALLLLLL!
 		//Pawns
 		board[0][1] = pawn;
 		board[1][1] = pawn;
