@@ -13,7 +13,7 @@ public class ChessModel implements IChessModel {
 		for (int i = 0; i < 8; i++) {
 			//TO DO: Check that players is correct.
 			board[i][1] = new Pawn(Player.BLACK);
-			board[i][6] = new Pawn(player);
+			board[i][6] = new Pawn(Player.WHITE);
 		}
 		
 		

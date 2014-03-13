@@ -17,7 +17,6 @@ public class King extends ChessPiece {
                     || move.fromRow == move.toRow - 1 || move.fromColumn == move.toColumn -1) {
                 return true;
             }
-
         }
 		return false;
 	}
