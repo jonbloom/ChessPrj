@@ -9,6 +9,12 @@ public class Pawn extends ChessPiece {
 	public String type() {
 		return "Pawn";
 	}
+	public String icon(){
+		if (super.player() == Player.WHITE)
+			return PieceText.WHITE_PAWN;
+		else
+			return PieceText.BLACK_PAWN;
+	}
 
 	public boolean isValidMove(Move move, IChessPiece[][] board) {
 		if (super.isValidMove(move, board)) {
