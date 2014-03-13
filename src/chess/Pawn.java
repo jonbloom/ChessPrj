@@ -14,23 +14,19 @@ public class Pawn extends ChessPiece {
 		if (super.isValidMove(move, board)) {
 			// Check this logic.
 			if(super.player() == Player.BLACK){
-				for(int i = 0;i <= 7;i++){
 					if(move.fromRow == 1){
 						if (move.toRow == (move.fromRow) + 2 || move.toColumn == (move.fromColumn) + 2) {
 							return true;
 						}
-					}
 					if (move.toRow == (move.fromRow) + 1 || move.toColumn == (move.fromColumn) + 1) {
 						return true;
 					}
 				}
 			}else if(super.player() == Player.WHITE){
-				for(int i = 0;i <= 7;i++){
 					if(move.fromRow == 6){
 						if (move.toRow == (move.fromRow) - 2 || move.toColumn == (move.fromColumn) - 2) {
 							return true;
 						}
-					}
 					if (move.toRow == (move.fromRow) - 1 || move.toColumn == (move.fromColumn) - 1) {
 						return true;
 					}
