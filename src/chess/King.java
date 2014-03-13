@@ -9,6 +9,13 @@ public class King extends ChessPiece {
 	public String type() {
 		return "King";
 	}
+	public String icon(){
+		if (super.player() == Player.WHITE)
+			return PieceText.WHITE_KING;
+		else
+			return PieceText.BLACK_KING;
+		
+	}
 	
 	public boolean isValidMove(Move move, IChessPiece[][] board) {
         if (super.isValidMove(move, board)) {

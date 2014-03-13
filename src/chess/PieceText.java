@@ -13,4 +13,21 @@ public class PieceText {
 	public static final String BLACK_BISHOP = "\u265D";
 	public static final String BLACK_KNIGHT = "\u265E";
 	public static final String BLACK_PAWN = "\u265F";
+	public static void print(){
+		System.out.print(WHITE_KING);
+		System.out.print(WHITE_QUEEN);
+		System.out.print(WHITE_ROOK);
+		System.out.print(WHITE_BISHOP);
+		System.out.print(WHITE_KNIGHT);
+		System.out.print(WHITE_PAWN);
+		System.out.print(BLACK_KING);
+		System.out.print(BLACK_QUEEN);
+		System.out.print(BLACK_ROOK);
+		System.out.print(BLACK_BISHOP);
+		System.out.print(BLACK_KNIGHT);
+		System.out.print(BLACK_PAWN);
+	}
+	public static void main(String args[]){
+		print();
+	}
 }

@@ -9,6 +9,13 @@ public class Rook extends ChessPiece {
 	public String type() {
 		return "Rook";
 	}
+	public String icon(){
+		if (super.player() == Player.WHITE)
+			return PieceText.WHITE_ROOK;
+		else
+			return PieceText.BLACK_ROOK;
+		
+	}
 
 	public boolean isValidMove(Move move, IChessPiece[][] board) {
 		if (super.isValidMove(move, board)) {
