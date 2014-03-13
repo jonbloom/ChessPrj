@@ -26,6 +26,13 @@ public interface IChessPiece {
     * @return the type of this piece
     */
    String type();
+   /**
+    * Return the unicode representation of this piece (♔♕♖♗♘♙♚♛♜♝♞♟).  Note:  In this case "type" refers to the game
+    * of chess, not the type of the Java class.
+    *
+    * @return the unicode representation of this piece
+    */
+   String icon();
 
    /**
     * Returns whether the piece at location {@code [move.fromRow, move.fromColumn]} is allowed to move to location
