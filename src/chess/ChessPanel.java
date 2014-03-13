@@ -16,12 +16,23 @@ import javax.swing.*;
 		private ButtonListener buttonListener = new ButtonListener(); 
 
 		public ChessPanel() { 
-			// complete this 
-		} 
+			board = new JButton[BDSIZE][BDSIZE];
+			
+			for (int row = 0; row < BDSIZE; row++) {
+				for (int col = 0; col < BDSIZE; col++) {
+					board[row][col] = new JButton();
+				}
+			}
+			
+		}
 
 		// method that updates the board 
 		private void displayBoard() { 
-			// complete this 
+			for (int row = 0; row < BDSIZE; row++) {
+				for (int col = 0; col < BDSIZE; col++) {
+					board[row][col].setText(model.pieceAt(row,col).icon());
+				}
+			}
 		} 
 
 		// add other helper methods as needed 
