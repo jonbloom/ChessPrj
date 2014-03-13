@@ -8,7 +8,8 @@ import javax.swing.*;
 	public class ChessPanel extends JPanel { 
 
 		private JButton[][] board; 
-		private ChessModel model; 
+		private ChessModel model;
+		private final int BDSIZE = 8;
 
 		// declare other instance variables as needed 
 
