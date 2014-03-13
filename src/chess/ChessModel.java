@@ -1,19 +1,27 @@
 package chess;
 
+import javax.swing.JButton;
+
 public class ChessModel implements IChessModel {
 
-	private IChessPiece[][] board;
+	private ChessPiece[][] board;
 	private Player player;
 	private final static int BDSIZE = 8;
 	
 	public ChessModel() {
+		board = new ChessPiece[BDSIZE][BDSIZE];
 		// Set up specific pieces, to start board.
-		
+		for (int row = 0; row < BDSIZE; row++) {
+			for (int col = 0; col < BDSIZE; col++) {
+				
+				
+			}
+		}
 		//Pawns
 		for (int i = 0; i < 8; i++) {
 			//TO DO: Check that players is correct.
-			board[i][1] = new Pawn(Player.BLACK);
-			board[i][6] = new Pawn(Player.WHITE);
+			board[1][i] = new Pawn(Player.BLACK);
+			board[6][i] = new Pawn(Player.WHITE);
 		}
 		
 		//Rook
@@ -75,7 +83,7 @@ public class ChessModel implements IChessModel {
 		return BDSIZE;
 	}
 
-	public IChessPiece pieceAt(int row, int column) {
+	public ChessPiece pieceAt(int row, int column) {
 		return board[row][column];
 	}
 }

@@ -1,5 +1,7 @@
 package chess;
 
+import java.awt.Font;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -17,12 +19,17 @@ import javax.swing.*;
 
 		public ChessPanel() { 
 			board = new JButton[BDSIZE][BDSIZE];
-			
+			model = new ChessModel();
+			setLayout(new GridLayout(8,8));
 			for (int row = 0; row < BDSIZE; row++) {
 				for (int col = 0; col < BDSIZE; col++) {
-					board[row][col] = new JButton();
+					board[row][col] = new JButton("");
+					board[row][col].setFont(new Font("Dialog",1,36));
+					
+					add(board[row][col]);
 				}
 			}
+			displayBoard();
 			
 		}
 
@@ -30,7 +37,13 @@ import javax.swing.*;
 		private void displayBoard() { 
 			for (int row = 0; row < BDSIZE; row++) {
 				for (int col = 0; col < BDSIZE; col++) {
-					board[row][col].setText(model.pieceAt(row,col).icon());
+					try{
+						board[row][col].setText(model.pieceAt(row,col).icon());
+					}
+					catch(NullPointerException e){
+						
+					}
+					
 				}
 			}
 		} 
