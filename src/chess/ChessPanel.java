@@ -13,6 +13,8 @@ import javax.swing.*;
 		private JButton[][] board; 
 		private ChessModel model;
 		private final int BDSIZE = 8;
+		private int sRow = -1;
+		private int sCol = 01;
 
 		// declare other instance variables as needed 
 
@@ -59,7 +61,7 @@ import javax.swing.*;
 						board[row][col].setText(model.pieceAt(row,col).icon());
 					}
 					catch(NullPointerException e){
-						
+						board[row][col].setText("");
 					}
 					
 				}
