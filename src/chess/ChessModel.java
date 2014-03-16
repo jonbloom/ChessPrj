@@ -8,18 +8,13 @@ public class ChessModel implements IChessModel {
 	private Player player;
 	private final static int BDSIZE = 8;
 	
+	
 	public ChessModel() {
 		board = new ChessPiece[BDSIZE][BDSIZE];
 		// Set up specific pieces, to start board.
-		for (int row = 0; row < BDSIZE; row++) {
-			for (int col = 0; col < BDSIZE; col++) {
-				
-				
-			}
-		}
+		
 		//Pawns
 		for (int i = 0; i < 8; i++) {
-			//TO DO: Check that players is correct.
 			board[1][i] = new Pawn(Player.BLACK);
 			board[6][i] = new Pawn(Player.WHITE);
 		}
@@ -52,7 +47,7 @@ public class ChessModel implements IChessModel {
 	}
 	
 	public boolean isComplete() {
-		return false;
+		
 	}
 
 	public boolean isValidMove(Move move) {
@@ -69,12 +64,43 @@ public class ChessModel implements IChessModel {
 
 	public boolean inCheck(Player player) {
 		if (player == Player.WHITE){
+<<<<<<< HEAD
 			return true;
 		}
 		else{
 			return false;
 		}
 		
+=======
+			int kingR = -1,kingC = -1;
+			for (int row = 0; row < BDSIZE; row++)
+				for (int col = 0; col < BDSIZE; col++)
+					if (pieceAt(row,col).type().equals("King") && pieceAt(row,col).player() == Player.WHITE){
+						kingR = row;
+						kingC = col;
+					}
+			for (int row = 0; row < BDSIZE; row++)
+				for (int col = 0; col < BDSIZE; col++)
+					if (pieceAt(row,col).player() == Player.BLACK && pieceAt(row,col).isValidMove(new Move(row,col,kingR,kingC), board)){
+						return true;
+					}
+		}
+		else{
+			int kingR = -1,kingC = -1;
+			for (int row = 0; row < BDSIZE; row++)
+				for (int col = 0; col < BDSIZE; col++)
+					if (pieceAt(row,col).type().equals("King") && pieceAt(row,col).player() == Player.BLACK){
+						kingR = row;
+						kingC = col;
+					}
+			for (int row = 0; row < BDSIZE; row++)
+				for (int col = 0; col < BDSIZE; col++)
+					if (pieceAt(row,col).player() == Player.WHITE && pieceAt(row,col).isValidMove(new Move(row,col,kingR,kingC), board)){
+						return true;
+					}
+		}
+		return false;
+>>>>>>> FETCH_HEAD
 	}
 
 	public Player currentPlayer() {
