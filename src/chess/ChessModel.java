@@ -68,6 +68,34 @@ public class ChessModel implements IChessModel {
 	}
 
 	public boolean inCheck(Player player) {
+		if (player == Player.WHITE){
+			int kingR = -1,kingC = -1;
+			for (int row = 0; row < BDSIZE; row++)
+				for (int col = 0; col < BDSIZE; col++)
+					if (pieceAt(row,col).type().equals("King") && pieceAt(row,col).player() == Player.WHITE){
+						kingR = row;
+						kingC = col;
+					}
+			for (int row = 0; row < BDSIZE; row++)
+				for (int col = 0; col < BDSIZE; col++)
+					if (pieceAt(row,col).player() == Player.BLACK && pieceAt(row,col).isValidMove(new Move(row,col,kingR,kingC), board)){
+						return true;
+					}
+		}
+		else{
+			int kingR = -1,kingC = -1;
+			for (int row = 0; row < BDSIZE; row++)
+				for (int col = 0; col < BDSIZE; col++)
+					if (pieceAt(row,col).type().equals("King") && pieceAt(row,col).player() == Player.BLACK){
+						kingR = row;
+						kingC = col;
+					}
+			for (int row = 0; row < BDSIZE; row++)
+				for (int col = 0; col < BDSIZE; col++)
+					if (pieceAt(row,col).player() == Player.WHITE && pieceAt(row,col).isValidMove(new Move(row,col,kingR,kingC), board)){
+						return true;
+					}
+		}
 		return false;
 	}
 
