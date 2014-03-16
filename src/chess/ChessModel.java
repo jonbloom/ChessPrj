@@ -5,16 +5,30 @@ import javax.swing.JButton;
 public class ChessModel implements IChessModel {
 
 	private ChessPiece[][] board;
-	private Player player;
+	private Player player = Player.WHITE;
 	private final static int BDSIZE = 8;
+<<<<<<< HEAD
 
 
 	public ChessModel() {
 		board = new ChessPiece[BDSIZE][BDSIZE];
 		// Set up specific pieces, to start board.
 
+=======
+	
+	public ChessModel() {
+		board = new ChessPiece[BDSIZE][BDSIZE];
+		// Set up specific pieces, to start board.
+		for (int row = 0; row < BDSIZE; row++) {
+			for (int col = 0; col < BDSIZE; col++) {
+				
+				
+			}
+		}
+>>>>>>> FETCH_HEAD
 		//Pawns
 		for (int i = 0; i < 8; i++) {
+			//TO DO: Check that players is correct.
 			board[1][i] = new Pawn(Player.BLACK);
 			board[6][i] = new Pawn(Player.WHITE);
 		}
@@ -47,7 +61,11 @@ public class ChessModel implements IChessModel {
 	}
 
 	public boolean isComplete() {
+<<<<<<< HEAD
 		return true;
+=======
+		return false;
+>>>>>>> FETCH_HEAD
 	}
 
 	public boolean isValidMove(Move move) {
@@ -55,6 +73,7 @@ public class ChessModel implements IChessModel {
 	}
 
 	public void move(Move move) {
+<<<<<<< HEAD
 		board[move.toRow][move.toColumn] = board[move.fromRow][move.fromColumn];
 		board[move.fromRow][move.fromColumn] = null;
 	}
@@ -111,6 +130,16 @@ public class ChessModel implements IChessModel {
 					}
 				}
 		}
+=======
+		if (board[move.fromRow][move.fromColumn].isValidMove(move, board)){
+			board[move.toRow][move.toColumn] = board[move.fromRow][move.fromColumn];
+			board[move.fromRow][move.fromColumn] = null;
+		}
+		
+	}
+
+	public boolean inCheck(Player player) {
+>>>>>>> FETCH_HEAD
 		return false;
 	}
 

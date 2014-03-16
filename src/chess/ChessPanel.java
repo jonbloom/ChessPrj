@@ -10,11 +10,21 @@ import javax.swing.*;
 
 	public class ChessPanel extends JPanel { 
 
+<<<<<<< HEAD
 		private JButton[][] board; 
 		private ChessModel model;
 		private final int BDSIZE = 8;
 		private int sRow = -1;
 		private int sCol = 01;
+=======
+	private JButton[][] board; 
+	private ChessModel model;
+	private final int BDSIZE = 8;
+	private int sRow = -1;
+	private int sCol = -1;
+	private ChessPiece tmp = null;
+	private Player player = Player.WHITE;
+>>>>>>> FETCH_HEAD
 
 		// declare other instance variables as needed 
 
@@ -35,6 +45,7 @@ import javax.swing.*;
 			
 		}
 
+<<<<<<< HEAD
 		// method that updates the board 
 		private void displayBoard() { 
 			for (int row = 0; row < BDSIZE; row++) {
@@ -47,14 +58,36 @@ import javax.swing.*;
 						}
 						else{
 							board[row][col].setBackground(Color.WHITE);
-						}
-					}
-					else{
+=======
+	// method that updates the board 
+	private void displayBoard() { 
+		for (int row = 0; row < BDSIZE; row++) {
+			for (int col = 0; col < BDSIZE; col++) {
+				board[row][col].setOpaque(true);
+				board[row][col].setBorderPainted(false);
+				if (row != sRow && col != sCol){
+					if (row % 2 == 0){
 						if (col % 2 == 0){
 							board[row][col].setBackground(Color.WHITE);
 						}
 						else{
 							board[row][col].setBackground(Color.GRAY);
+>>>>>>> FETCH_HEAD
+						}
+					}
+					else{
+						if (col % 2 == 0){
+<<<<<<< HEAD
+							board[row][col].setBackground(Color.WHITE);
+						}
+						else{
+							board[row][col].setBackground(Color.GRAY);
+=======
+							board[row][col].setBackground(Color.GRAY);
+						}
+						else{
+							board[row][col].setBackground(Color.WHITE);
+>>>>>>> FETCH_HEAD
 						}
 					}
 					try{
@@ -62,9 +95,13 @@ import javax.swing.*;
 					}
 					catch(NullPointerException e){
 						board[row][col].setText("");
+<<<<<<< HEAD
 					}
 					
 				}
+=======
+					}}
+>>>>>>> FETCH_HEAD
 			}
 		} 
 
@@ -75,6 +112,7 @@ import javax.swing.*;
 
 			public void actionPerformed(ActionEvent event) { 
 
+<<<<<<< HEAD
 				for (int row = 0; row < BDSIZE; row++) {
 					for (int col = 0; col < BDSIZE; col++) {
 						
@@ -89,9 +127,24 @@ import javax.swing.*;
 							sCol = col;
 							board[sRow][sCol].setBackground(Color.BLUE);
 							
+=======
+			for (int row = 0; row < BDSIZE; row++) {
+				for (int col = 0; col < BDSIZE; col++) {
+					if (board[row][col] == event.getSource()) {
+						if (sRow > -1 && sCol > -1) {
+							model.move(new Move(sRow, sCol, row, col));
+							sRow = -1;
+							sCol = -1;
+						}
+						else{
+							sRow = row;
+							sCol = col;
+							board[sRow][sCol].setBackground(Color.BLUE);	
+>>>>>>> FETCH_HEAD
 						}
 					}
 				}
 			}
+			displayBoard();
 		} 
 	} 
