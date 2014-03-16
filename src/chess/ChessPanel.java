@@ -66,7 +66,8 @@ public class ChessPanel extends JPanel {
 					}
 					catch(NullPointerException e){
 						board[row][col].setText("");
-					}}
+					}
+				}
 			}
 		}
 	} 
