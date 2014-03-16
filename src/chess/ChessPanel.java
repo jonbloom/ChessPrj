@@ -10,11 +10,19 @@ import javax.swing.*;
 
 public class ChessPanel extends JPanel { 
 
+<<<<<<< HEAD
 	private JButton[][] board; 
 	private ChessModel model;
 	private final int BDSIZE = 8;
 	private int sRow = -1;
 	private int sCol = -1;
+=======
+		private JButton[][] board; 
+		private ChessModel model;
+		private final int BDSIZE = 8;
+		private int sRow = -1;
+		private int sCol = 01;
+>>>>>>> FETCH_HEAD
 
 	// declare other instance variables as needed 
 
@@ -54,8 +62,13 @@ public class ChessPanel extends JPanel {
 					if (col % 2 == 0){
 						board[row][col].setBackground(Color.GRAY);
 					}
+<<<<<<< HEAD
 					else{
 						board[row][col].setBackground(Color.WHITE);
+=======
+					catch(NullPointerException e){
+						board[row][col].setText("");
+>>>>>>> FETCH_HEAD
 					}
 				}
 				try{
