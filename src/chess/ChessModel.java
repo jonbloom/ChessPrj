@@ -68,7 +68,13 @@ public class ChessModel implements IChessModel {
 	}
 
 	public boolean inCheck(Player player) {
-		return false;
+		if (player == Player.WHITE){
+			return true;
+		}
+		else{
+			return false;
+		}
+		
 	}
 
 	public Player currentPlayer() {
