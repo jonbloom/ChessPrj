@@ -1,5 +1,6 @@
 package chess;
 
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -25,7 +26,6 @@ import javax.swing.*;
 				for (int col = 0; col < BDSIZE; col++) {
 					board[row][col] = new JButton("");
 					board[row][col].setFont(new Font("Dialog",1,36));
-					
 					add(board[row][col]);
 				}
 			}
@@ -37,6 +37,24 @@ import javax.swing.*;
 		private void displayBoard() { 
 			for (int row = 0; row < BDSIZE; row++) {
 				for (int col = 0; col < BDSIZE; col++) {
+					board[row][col].setOpaque(true);
+					board[row][col].setBorderPainted(false);
+					if (row % 2 == 0){
+						if (col % 2 == 0){
+							board[row][col].setBackground(Color.GRAY);
+						}
+						else{
+							board[row][col].setBackground(Color.WHITE);
+						}
+					}
+					else{
+						if (col % 2 == 0){
+							board[row][col].setBackground(Color.WHITE);
+						}
+						else{
+							board[row][col].setBackground(Color.GRAY);
+						}
+					}
 					try{
 						board[row][col].setText(model.pieceAt(row,col).icon());
 					}
